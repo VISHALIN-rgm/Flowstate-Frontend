@@ -487,7 +487,7 @@ export function useAISession({
     stopMic();
     stopCanvasLoop();
     if (wsRef.current) {
-      if ([WebSocket.OPEN, WebSocket.CONNECTING].includes(wsRef.current.readyState))
+      if ([WebSocket.OPEN, WebSocket.CONNECTING].includes(wsRef.current.readyState as 0 | 1))
         wsRef.current.close();
       wsRef.current = null;
     }
